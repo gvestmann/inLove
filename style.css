@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    max-width: 100vw;
+    background-color: #F4F4F5;
+    font-family: 'Copse', serif;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.25), inset -5px -5px 10px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+}
+
+@media only screen and (max-width: 850px) {
+    body {
+        box-shadow: none !important;
+    }
+  }
+
+.container {
+    width: 800px;
+    text-align: center;
+    background: linear-gradient(317.7deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.4) 105.18%), #F3F3F4;
+    background-blend-mode: soft-light, normal;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: -10px -10px 20px #FAFBFF, 10px 10px 20px #A6ABBD;
+    border-radius: 40px;
+    padding: 2rem 4rem 2rem 4rem;
+    animation: float-down;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    position: relative;
+    margin-top: 4rem;
+}
+
+@media only screen and (max-width: 850px) {
+    .container {
+        width: 90%;
+    }
+  }
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.img-container {
+    width: 70px;
+    height: 80px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 70px;
+    margin-left: 1rem;
+}
+
+.icon {
+    height: 60px;
+    animation-name: heartbeat;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+}
+
+p {
+    text-align: justify;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 4rem 6rem 4rem 6rem; 
+}
+
+@media only screen and (max-width: 700px) {
+    p {
+
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+  }
+
+button {
+    font-family: 'Rubik', sans-serif;
+    box-shadow: -6px -6px 15px rgba(255, 255, 255, 0.78), 6px 6px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 54px;
+    border: 0;
+    font-size: 24px;
+    color: #FF6E79;
+    background-color: #F4F4F5;
+    padding: 1rem 2rem 1rem 2rem;
+    margin-bottom: 4rem;
+    animation-name: button-after-hover;
+    animation-fill-mode: both;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    outline: 0 !important;
+}
+
+button:hover {
+    animation-name: button-hover;
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 800px;
+}
+
+p.by-loverstar {
+    font-size: 14px
+  }
+
+.lovestar-logo {
+    height: 20px;
+    margin-left: 10px;
+}
+
+@keyframes button-hover {
+    from { 
+        color: #FF6E79;
+        background-color: #F4F4F5;
+    }
+    to {
+        background-color: #FF6E79;
+        color: #F4F4F5;
+    }
+}
+
+@keyframes button-after-hover {
+    from { 
+        background-color: #FF6E79;
+        color: #F4F4F5;
+    }
+    to {
+        color: #FF6E79;
+        background-color: #F4F4F5;
+    }
+}
+
+@keyframes float-down {
+    from {
+        top: -1000px;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+    0% {
+        height: 60px;
+    }
+    30% {
+        height: 60px;
+    }
+    40% {
+        height: 70px;
+    }
+    50% {
+        height: 60px;
+    }
+    60% {
+        height: 70px;
+    }
+    70% {
+        height: 60px;
+    }
+    100% {
+        height: 60px;
+    }
+}
+
+.pop-up-box {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f3f4a8;
+    animation: fade-in;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+
+  
+
+.pop-up-content {
+    background: #F3F3F4;
+    box-shadow: -5px -5px 20px #FFFFFF, 5px 5px 20px rgba(189, 195, 197, 0.5);
+    border-radius: 10px;
+    margin: 15% auto;
+    padding: 20px;
+    width: 60%;
+    position: relative;
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .pop-up-content {
+    width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .pop-up-content {
+    width: 95%;
+    }
+}
+  
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    box-shadow: 4px 4px 7px rgba(189, 195, 197, 0.07), -4px -4px 13px #FFFFFF, 6px 6px 36px rgba(189, 195, 197, 0.06);
+    border-radius: 50%;
+    padding: 1px 10px 1px 10px;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: inset -4px -2px 8px #FFFFFF, inset 4px 2px 8px rgba(189, 195, 197, 0.48);
+    border-radius: 20px;
+    width: 70%;
+    padding: 1rem 1rem 1rem 2rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    margin-top: 4rem;
+    background: #F3F3F4;
+    text-align: center;
+    font-size: 1em;
+}
+
+input:focus {
+    border: 2px solid #FF5961 !important;
+    outline: 0 !important;
+}
+
+input.submit {
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    box-shadow: -6px -6px 15px rgba(255, 255, 255, 0.78), 6px 6px 16px rgba(0, 0, 0, 0.15);
+    width: 50%;
+    border-radius: 54px;
+    border: 0;
+    color: #FF6E79;
+    background-color: #F4F4F5;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin-bottom: 4rem;
+    animation-name: button-after-hover;
+    animation-fill-mode: both;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+}
+
+input.submit:hover {
+    animation-name: button-hover;
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+.button-wrapper {
+    animation: fade-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
