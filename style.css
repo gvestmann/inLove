@@ -1,3 +1,5 @@
+/* BASIC LAYOUT STUFF */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -16,13 +18,64 @@ body {
     align-content: center;
 }
 
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    width: 800px;
+}
+
+.img-container {
+    width: 70px;
+    height: 80px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-size: 70px;
+    margin-left: 1rem;
+}
+
+p {
+    text-align: justify;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 4rem 6rem 4rem 6rem; 
+}
+
+@media only screen and (max-width: 700px) {
+    p {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}
+
 @media only screen and (max-width: 850px) {
     body {
         box-shadow: none !important;
     }
+}
+
+p.by-loverstar {
+    font-size: 14px
   }
 
-.container {
+.lovestar-logo {
+    height: 20px;
+    margin-left: 10px;
+}
+
+
+  /* PAGE MAIN CONTENT */ 
+  .container {
     width: 800px;
     text-align: center;
     background: linear-gradient(317.7deg, rgba(0, 0, 0, 0.4) 0%, rgba(255, 255, 255, 0.4) 105.18%), #F3F3F4;
@@ -45,112 +98,7 @@ body {
     }
   }
 
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.img-container {
-    width: 70px;
-    height: 80px;
-    display: inline-block;
-    display: flex;
-    align-items: center;
-}
-
-h1 {
-    font-size: 70px;
-    margin-left: 1rem;
-}
-
-.icon {
-    height: 60px;
-    animation-name: heartbeat;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    position: absolute;
-}
-
-p {
-    text-align: justify;
-    font-family: 'Rubik', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    margin: 4rem 6rem 4rem 6rem; 
-}
-
-@media only screen and (max-width: 700px) {
-    p {
-
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-  }
-
-button {
-    font-family: 'Rubik', sans-serif;
-    box-shadow: -6px -6px 15px rgba(255, 255, 255, 0.78), 6px 6px 16px rgba(0, 0, 0, 0.15);
-    border-radius: 54px;
-    border: 0;
-    font-size: 24px;
-    color: #FF6E79;
-    background-color: #F4F4F5;
-    padding: 1rem 2rem 1rem 2rem;
-    margin-bottom: 4rem;
-    animation-name: button-after-hover;
-    animation-fill-mode: both;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-in-out;
-    outline: 0 !important;
-}
-
-button:hover {
-    animation-name: button-hover;
-    animation-fill-mode: both;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-}
-
-footer {
-    display: flex;
-    justify-content: center;
-    width: 800px;
-}
-
-p.by-loverstar {
-    font-size: 14px
-  }
-
-.lovestar-logo {
-    height: 20px;
-    margin-left: 10px;
-}
-
-@keyframes button-hover {
-    from { 
-        color: #FF6E79;
-        background-color: #F4F4F5;
-    }
-    to {
-        background-color: #FF6E79;
-        color: #F4F4F5;
-    }
-}
-
-@keyframes button-after-hover {
-    from { 
-        background-color: #FF6E79;
-        color: #F4F4F5;
-    }
-    to {
-        color: #FF6E79;
-        background-color: #F4F4F5;
-    }
-}
-
-@keyframes float-down {
+  @keyframes float-down {
     from {
         top: -1000px;
     }
@@ -159,13 +107,15 @@ p.by-loverstar {
     }
 }
 
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+
+/* BEATING HEART */
+.icon {
+    height: 60px;
+    animation-name: heartbeat;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
 }
 
 @keyframes heartbeat {
@@ -192,6 +142,56 @@ p.by-loverstar {
     }
 }
 
+
+/* BUTTON */
+button {
+    font-family: 'Rubik', sans-serif;
+    box-shadow: -6px -6px 15px rgba(255, 255, 255, 0.78), 6px 6px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 54px;
+    border: 0;
+    font-size: 24px;
+    color: #FF6E79;
+    background-color: #F4F4F5;
+    padding: 1rem 2rem 1rem 2rem;
+    margin-bottom: 4rem;
+    animation-name: button-after-hover;
+    animation-fill-mode: both;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    outline: 0 !important;
+}
+
+button:hover {
+    animation-name: button-hover;
+    animation-fill-mode: both;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes button-hover {
+    from { 
+        color: #FF6E79;
+        background-color: #F4F4F5;
+    }
+    to {
+        background-color: #FF6E79;
+        color: #F4F4F5;
+    }
+}
+
+@keyframes button-after-hover {
+    from { 
+        background-color: #FF6E79;
+        color: #F4F4F5;
+    }
+    to {
+        color: #FF6E79;
+        background-color: #F4F4F5;
+    }
+}
+
+
+/* POP-UP */
 .pop-up-box {
     display: none;
     position: fixed;
@@ -207,8 +207,14 @@ p.by-loverstar {
     animation-timing-function: linear;
 }
 
-
-  
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 .pop-up-content {
     background: #F3F3F4;
@@ -232,7 +238,6 @@ p.by-loverstar {
     width: 95%;
     }
 }
-  
 
 .close {
     color: #aaa;
@@ -254,6 +259,7 @@ p.by-loverstar {
     cursor: pointer;
 }
 
+/* POP-UP BOX CONTENT */ 
 input {
     border: 2px solid rgba(255, 255, 255, 0.2);
     box-shadow: inset -4px -2px 8px #FFFFFF, inset 4px 2px 8px rgba(189, 195, 197, 0.48);
@@ -304,4 +310,3 @@ input.submit:hover {
     animation-fill-mode: forwards;
     animation-timing-function: ease-in;
 }
-
